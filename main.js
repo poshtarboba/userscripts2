@@ -37,7 +37,7 @@ function pbuscript_main_function(){
 		createButton();
 		createPanel();
 		function createStyles(){
-			let css = '#pbuscript_mainbutton{position:fixed;z-index:100600;right:-20px;top:80%;width:60px;height:60px;background:#eee url(gear.png) no-repeat 10px 18px / 24px 24px;border:1px solid #999;border-radius:50% 0 0 50%;cursor:pointer;opacity:0.2}\n';
+			let css = '#pbuscript_mainbutton{position:fixed;z-index:100600;right:-20px;top:80%;width:60px;height:60px;background:#eee url(https://poshtarboba.github.io/userscripts2/gear.png) no-repeat 10px 18px / 24px 24px;border:1px solid #999;border-radius:50% 0 0 50%;cursor:pointer;opacity:0.2}\n';
 			css += '#pbuscript_mainbutton:hover{opacity:1}\n';
 			css += '#pbuscript_mainbutton.pbuscript-cursor-move{cursor:move}\n';
 			css += '#pbuscript_mainpanel{display:none;position:fixed;z-index:100602;left:80%;top:10%;padding:1px;min-width:64px;background:#eee;border:1px solid #999;opacity:.5}\n';
