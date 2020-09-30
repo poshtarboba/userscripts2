@@ -5,6 +5,7 @@
 // ==/UserScript==
 
 let pbuscript = {};
+pbuscript_main_function();
 
 function pbuscript_main_function(){
 	console.info('PBUS> main.js');
