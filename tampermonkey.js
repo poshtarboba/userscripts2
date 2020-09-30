@@ -10,5 +10,4 @@
 	js.setAttribute('src', 'https://poshtarboba.github.io/userscripts2/main.js?' + VERSION);
 	js.setAttribute('class', 'pbuscript-script pbuscript-script-main');
 	document.body.appendChild(js);
-	console.info('PBUS> main.js');
 })();

@@ -24,7 +24,8 @@
 	}
 
 	function rareTags(){
-		let list = document.getElementById('tag-list') || document.getElementById('tab-box');
+		let list = document.getElementById('tag-list') || document.getElementById('tag-box');
+		if (!list) return;
 		let items = list.querySelectorAll('li');
 		items.forEach((li) => {
 			let spanCount = li.querySelector('.post-count');
