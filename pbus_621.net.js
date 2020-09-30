@@ -6,7 +6,8 @@
 
 	function addStyles(){
 		//let css = 'html.pbuscript-smooth{scroll-behavior:smooth}\n';
-		let css = '.pbuscript-tag1{opacity:.1}\n';
+		let css = '#image{width:auto;height:auto;max-width:calc(100vw-320px);max-height:98vh}\n'';
+		css += '.pbuscript-tag1{opacity:.1}\n';
 		css += '.pbuscript-tag2{opacity:.2}\n';
 		css += '.pbuscript-tag3{opacity:.3}\n';
 		css += '.pbuscript-tag4{opacity:.4}\n';
@@ -30,7 +31,10 @@
 			if (!spanCount) return;
 			li.classList.add('pbuscript-tag');
 			let className = '';
-			let n = +spanCount.innerText.replace('k', '000').replace('m', '000000');
+			let s = spanCount.innerText;
+			let n = parseFloat(s);
+			if (s.includes('k')) n *= 1000;
+			if (s.includes('m')) n *= 1000000;
 			if (n > 100000) className = 'pbuscript-tag1';
 			else if (n > 20000) className = 'pbuscript-tag2';
 			else if (n > 10000) className = 'pbuscript-tag3';
