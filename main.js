@@ -14,7 +14,7 @@
 
 	const PATH = 'https://poshtarboba.github.io/userscripts2/';
 
-	if (location.host === 'e621.net') addScript('pbus_621.net.js');
+	if (location.host === 'e621.net') loadJS('pbus_621.net.js');
 
 	function loadJS(jsFilename){
 		let js = document.createElement('script');
