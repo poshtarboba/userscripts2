@@ -6,13 +6,11 @@
 
 	function addStyles(){
 		//let css = 'html.pbuscript-smooth{scroll-behavior:smooth}\n';
-		let css = '.pbuscript-tag1{opacity:.05}\n';
-		css += '.pbuscript-tag2{opacity:.1}\n';
-		css += '.pbuscript-tag3{opacity:.15}\n';
-		css += '.pbuscript-tag4{opacity:.2}\n';
-		css += '.pbuscript-tag5{opacity:.25}\n';
-		css += '.pbuscript-tag6{opacity:.3}\n';
-		css += '.pbuscript-tag7{opacity:.5}\n';
+		let css = '.pbuscript-tag1{opacity:.1}\n';
+		css += '.pbuscript-tag2{opacity:.2}\n';
+		css += '.pbuscript-tag3{opacity:.3}\n';
+		css += '.pbuscript-tag4{opacity:.4}\n';
+		css += '.pbuscript-tag5{opacity:.6}\n';
 		css += '.pbuscript-tag:hover{opacity:1}\n';
 		pbuscript.addStyle(css, 'pbuscript-style-e621');
 	}
@@ -36,10 +34,8 @@
 			if (n > 100000) className = 'pbuscript-tag1';
 			else if (n > 20000) className = 'pbuscript-tag2';
 			else if (n > 10000) className = 'pbuscript-tag3';
-			else if (n > 3000) className = 'pbuscript-tag4';
+			else if (n > 5000) className = 'pbuscript-tag4';
 			else if (n > 1000) className = 'pbuscript-tag5';
-			else if (n > 500) className = 'pbuscript-tag6';
-			else if (n > 200) className = 'pbuscript-tag7';
 			if (className) li.classList.add(className);
 		});
 	}
