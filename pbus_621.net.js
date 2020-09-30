@@ -6,7 +6,7 @@
 
 	function addStyles(){
 		//let css = 'html.pbuscript-smooth{scroll-behavior:smooth}\n';
-		let css = '#image{width:auto;height:auto;max-width:calc(100vw-320px);max-height:98vh}\n'';
+		let css = '#image{width:auto;height:auto;max-width:calc(100vw-320px);max-height:98vh}\n';
 		css += '.pbuscript-tag1{opacity:.1}\n';
 		css += '.pbuscript-tag2{opacity:.2}\n';
 		css += '.pbuscript-tag3{opacity:.3}\n';
