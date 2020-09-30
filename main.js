@@ -4,10 +4,7 @@
 // @require   https://poshtarboba.github.io/userscripts2/main.js?1
 // ==/UserScript==
 
-if (!pbuscript) {
-	let pbuscript = {};
-	pbuscript_main_function();
-}
+let pbuscript = {};
 
 function pbuscript_main_function(){
 	console.info('PBUS> main.js');
