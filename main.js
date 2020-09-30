@@ -4,17 +4,20 @@
 // @require   https://poshtarboba.github.io/userscripts2/main.js?1
 // ==/UserScript==
 
-(function (){
-	if (window.pbuscript) return;
+if (!pbuscript) {
+	let pbuscript = {};
+	pbuscript_main_function();
+}
+
+function pbuscript_main_function(){
 	console.info('PBUS> main.js');
-	window.pbuscript = {
-		addStyle: addStyle,                  /* (string css [, string className]) */
-		createMainpanel: createMainpanel,    /* () */
-	};
+	pbuscript.addStyle = addStyle;                  /* (string css [, string className]) */
+	pbuscript.createMainpanel = createMainpanel;    /* () */
 
 	const PATH = 'https://poshtarboba.github.io/userscripts2/';
 
 	if (location.host === 'e621.net') loadJS('pbus_621.net.js');
+	console.log();
 
 	function loadJS(jsFilename){
 		let js = document.createElement('script');
@@ -141,4 +144,4 @@
 		}
 	}
 
-})();
+}
