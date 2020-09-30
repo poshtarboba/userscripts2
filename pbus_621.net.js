@@ -4,6 +4,8 @@
 	scrollToImage();
 	rareTags();
 
+	pbuscript.createMainpanel();
+
 	function addStyles(){
 		//let css = 'html.pbuscript-smooth{scroll-behavior:smooth}\n';
 		let css = '#image{width:auto;height:auto;max-width:calc(100vw-320px);max-height:98vh}\n';
