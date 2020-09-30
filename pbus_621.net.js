@@ -40,6 +40,7 @@
 			else if (n > 1000) className = 'pbuscript-tag5';
 			else if (n > 500) className = 'pbuscript-tag6';
 			else if (n > 200) className = 'pbuscript-tag7';
+			if (className) li.classList.add(className);
 		});
 	}
 
