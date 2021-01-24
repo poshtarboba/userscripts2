@@ -1,5 +1,6 @@
 (function(){
-	if (location.href.indexOf('youtube.com/watch?') < 0) return;
+	let noVideo = location.href.indexOf('youtube.com/watch?') < 0 && location.href.indexOf('youtube.com/embed/') < 0;
+	if (noVideo) return;
 	let controls = document.querySelector('.ytp-right-controls');
 	if (!controls) return;
 	let style = document.createElement('style');
