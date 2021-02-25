@@ -6,7 +6,7 @@
 	let style = document.createElement('style');
 	style.innerHTML = '.pb-btn{position:relative;display:inline-block;padding:0 8px;vertical-align:top;cursor:pointer;opacity:.7}.pb-btn:hover{opacity:1}.pb-btn::before{content:"";position:absolute;left:2px;top:8px;right:2px;bottom:8px;border:1px solid #fff;border-radius:4px}.pb-btn.pb-active:before{background:#fff6}';
 	document.head.appendChild(style);
-	let btn480p = createButton('480p', 'pb-quality');
+	let btn480p = createButton('Q', 'pb-quality');
 	let btn200x = createButton('2x', 'pb-speed');
 	let btn150x = createButton('1.5x', 'pb-speed');
 	let btn125x = createButton('1.25x', 'pb-speed');
