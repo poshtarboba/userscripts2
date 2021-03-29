@@ -66,8 +66,8 @@
 		html += '<span class="pb-play-simple">▶</span>';
 		span.innerHTML = html;
 		h1.insertBefore(span, h1.firstElementChild);
-		let likeBtn = span.querySelector('pb-play-like');
-		let simpleBtn = span.querySelector('pb-play-simple');
+		let likeBtn = span.querySelector('.pb-play-like');
+		let simpleBtn = span.querySelector('.pb-play-simple');
 		simpleBtn.addEventListener('click', () => {
 			span.remove();
 			delayClick(100, btn125x);
