@@ -32,7 +32,7 @@
 	addClick(btn150x, 'Швидкість відтворення', '1.5');
 	addClick(btn125x, 'Швидкість відтворення', '1.25');
 	addClick(btn100x, 'Швидкість відтворення', 'Звичайна');
-	addMultiButtons();
+	setTimeout(addMultiButtons, 3000);
 	function createButton(text, classNames){
 		let btn = document.createElement('span');
 		btn.innerText = text;
@@ -80,6 +80,6 @@
 		});
 	}
 	function delayClick(time, elem){
-		setTimeout(() => { elem.dispatchEvent(new Event('click')); }, time);
+		setTimeout(elem.dispatchEvent, time, new Event('click'));
 	}
 })();
