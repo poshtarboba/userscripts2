@@ -8,6 +8,7 @@
 	styleHTML += '.pb-btn:hover{opacity:1}\n';
 	styleHTML += '.pb-btn::before{content:"";position:absolute;left:2px;top:8px;right:2px;bottom:8px;border:1px solid #fff;border-radius:4px}\n';
 	styleHTML += '.pb-btn.pb-active:before{background:#fff6}\n';
+	styleHTML += 'h1{position:relative}\n';
 	styleHTML += '.pb-h1{position:absolute;right:0;top:0;z-index:1000}\n';
 	styleHTML += '.pb-h1>span{cursor:pointer;opacity:0.7}\n';
 	styleHTML += '.pb-h1>span:hover{opacity:1}\n';
