@@ -81,6 +81,6 @@
 		});
 	}
 	function delayClick(time, elem){
-		setTimeout(elem.dispatchEvent, time, new Event('click'));
+		setTimeout(() => { elem.dispatchEvent(new Event('click')); }, time);
 	}
 })();
