@@ -33,7 +33,8 @@
 	addClick(btn150x, 'Швидкість відтворення', '1.5');
 	addClick(btn125x, 'Швидкість відтворення', '1.25');
 	addClick(btn100x, 'Швидкість відтворення', 'Звичайна');
-	setTimeout(addMultiButtons, 3000);
+	//setTimeout(addMultiButtons, 3000);
+	addMultiButtons();
 	function createButton(text, classNames){
 		let btn = document.createElement('span');
 		btn.innerText = text;
