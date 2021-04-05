@@ -35,7 +35,7 @@
 		btnPlay.remove();
 		delayClick(100, btn125x);
 		delayClick(200, btn480p);
-		delayClick(300, document.querySelector('.ytp-play-button'));
+		if (location.href.indexOf('youtube.com/watch?') > -1) delayClick(300, document.querySelector('.ytp-play-button'));
 		setTimeout(() => { document.querySelector('.video-stream').focus(); }, 1000);
 	});
 
