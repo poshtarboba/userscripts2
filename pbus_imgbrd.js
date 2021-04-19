@@ -3,7 +3,7 @@
 	addButton();
 
 	function addButton(){
-		let css = 'img.fully{width:100%;max-width:300px}';
+		let css = 'img.fully{width:100%;max-width:400px}';
 		let style = document.createElement('style');
 		style.innerHTML = css;
 		document.head.appendChild(style);
