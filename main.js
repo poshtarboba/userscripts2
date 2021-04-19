@@ -20,6 +20,7 @@ function pbuscript_main_function(){
 	if (location.host.indexOf('facebook.com') > -1) loadJS('pbus_facebook.js');
 	if (location.href.indexOf('youtube.com/watch?') > -1) loadJS('pbus_youtube.js');
 	if (location.href.indexOf('youtube.com/embed/') > -1) loadJS('pbus_youtube.js');
+	if (location.href.indexOf('boards.4chan.org') > -1) loadJS('pbus_imgbrd.js');
 
 	function loadJS(jsFilename){
 		let js = document.createElement('script');
