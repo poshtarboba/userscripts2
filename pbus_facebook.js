@@ -29,14 +29,14 @@
 			css += '#pbus_mobilepan:hover,#pbus_mobilebtn:hover{background:#d6d6d6}';
 			return css;
 		}
-		function panDragStart(){
+		function panDragStart(e){
 			let rect = box.getBoundingClientRect();
 			box.startMoveX = e.clientX - rect.left;
 			box.startMoveY = e.clientY - rect.top;
 			window.addEventListener('mousemove', mouseMove);
 			window.addEventListener('mouseup', mouseUp);
 		}
-		function mouseMove(){
+		function mouseMove(e){
 			let left = (e.clientX - box.startMoveX) / window.innerWidth * 100;
 			let top = (e.clientY - box.startMoveY) / window.innerHeight * 100;
 			btn.style.left = Math.min(Math.max(left, 0), 95) + '%';
