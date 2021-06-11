@@ -21,6 +21,7 @@
 		let top = localStorage.getItem('pbus_mobilebox_ypos');
 		if (left) box.style.left = left;
 		if (top) box.style.top = top;
+		document.body.appendChild(box);
 		function getCSS(){
 			let css = '#pbus_mobilebox{position:fixed;z-index:100000;left:310px;top:4px}\n';
 			css += '#pbus_mobilepan{width:40px;height:12px;background:#e6e6e6;cursor:move}\n';
