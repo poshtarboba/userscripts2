@@ -24,8 +24,8 @@
 		document.body.appendChild(box);
 		function getCSS(){
 			let css = '#pbus_mobilebox{position:fixed;z-index:100000;left:310px;top:4px}\n';
-			css += '#pbus_mobilepan{width:40px;height:12px;background:#e6e6e6;cursor:move}\n';
-			css += '#pbus_mobilebtn{width:40px;height:40px;font-size:24px;lineHeight:40px;text-align:center;background:#e6e6e6;border-radius:50%;cursor:pointer}\n';
+			css += '#pbus_mobilepan{width:40px;height:8px;background:#e6e6e6;cursor:move}\n';
+			css += '#pbus_mobilebtn{box-sizing:border-box;padding-top:2px;width:40px;height:40px;font-size:24px;lineHeight:38px;text-align:center;background:#e6e6e6;border-radius:50%;cursor:pointer}\n';
 			css += '#pbus_mobilepan:hover,#pbus_mobilebtn:hover{background:#d6d6d6}';
 			return css;
 		}
