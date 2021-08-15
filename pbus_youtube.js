@@ -34,8 +34,8 @@
 	let btn050x = createButton('0.5x', 'pb-speed pb-speed-050x');
 	let btn025x = createButton('0.25x', 'pb-speed pb-speed-025x');
 	let btnPlay = createButton('▶', 'pb-play');
-	spanBox.appendChild(btnPlay);
 	spanBox.appendChild(btn480p);
+	spanBox.appendChild(btnPlay);
 	spanBox.appendChild(btn100x);
 	spanBox.appendChild(btn125x);
 	spanBox.appendChild(btn150x);
