@@ -8,11 +8,11 @@
 	styleHTML += '.pb-btn:hover{opacity:1}\n';
 	styleHTML += '.pb-btn::before{content:"";position:absolute;left:2px;top:8px;right:2px;bottom:8px;border:1px solid #fff;border-radius:4px}\n';
 	styleHTML += '.pb-btn.pb-active:before{background:#fff8}\n';
-	styleHTML += '.ytp-left-controls{position:relative;overflow:auto !important}\n';
+	styleHTML += '.ytp-left-controls{position:relative;overflow:visible !important}\n';
 	//styleHTML += '.pb-play{position:absolute;left:0;top:-60px}\n';
 	styleHTML += '.pb-span-box{position:relative}\n';
-	styleHTML += '.pb-span-box:hover:before{content:"";position:absolute;left:0;bottom:100%;width:246px;height:50px;background:rgba(0,0,0,0.2)}\n';
-	styleHTML += '.pb-speed{position:absolute;display:none;top:-60px}\n';
+	styleHTML += '.pb-span-box:hover:before{content:"";position:absolute;left:-4px;bottom:100%;width:254px;height:50px;background:rgba(0,0,0,0.4);border-radius:4px}\n';
+	styleHTML += '.pb-speed{position:absolute;display:none;top:-50px}\n';
 	styleHTML += '.pb-span-box:hover .pb-speed{display:block}\n';
 	styleHTML += '.pb-speed-100x{left:0}\n';
 	styleHTML += '.pb-speed-125x{left:25px}\n';
