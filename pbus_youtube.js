@@ -8,7 +8,7 @@
 	styleHTML += '.pb-btn:hover{opacity:1}\n';
 	styleHTML += '.pb-btn::before{content:"";position:absolute;left:2px;top:8px;right:2px;bottom:8px;border:1px solid #fff;border-radius:4px}\n';
 	styleHTML += '.pb-btn.pb-active:before{background:#fff8}\n';
-	styleHTML += '.ytp-left-controls{position:relative}\n';
+	styleHTML += '.ytp-left-controls{position:relative;overflow:auto !important}\n';
 	//styleHTML += '.pb-play{position:absolute;left:0;top:-60px}\n';
 	styleHTML += '.pb-span-box{position:relative}\n';
 	styleHTML += '.pb-span-box:hover:before{content:"";position:absolute;left:0;bottom:100%;width:246px;height:50px;background:rgba(0,0,0,0.2)}\n';
