@@ -111,11 +111,10 @@
 		}
 		
 		function rm(elem, text) {
-			if (elem) { elem.remove(); console.log('> ' + text + ' removed!!!'); }
-			//else { if (text) console.log('> ' + text + ' not found'); }
+			elem.forEach(e => { e.remove(); console.log('> ' + text + ' removed!!!'); });
 		}
 		function rmText(elem, text) {
-			if (elem) { elem.innerHTML = ''; console.log('> ' + text + ' clear!!!'); }
+			elem.forEach(e => { e.innerHTML = ''; console.log('> ' + text + ' cleared!!!'); });
 		}
 	}
 })();
