@@ -9,6 +9,7 @@ pbuscript_main_function();
 
 function pbuscript_main_function(){
 	console.info('PBUS> main.js');
+	document.getElementByText = getElByTex;         /* (string or RegExp) */
 	pbuscript.addStyle = addStyle;                  /* (string css [, string className]) */
 	pbuscript.createMainpanel = createMainpanel;    /* () */
 	pbuscript.createLenta = createLenta;            /* (array urls [, int delay = 1000]), url: { url, src } */
@@ -255,6 +256,18 @@ function pbuscript_main_function(){
 				img.removeAttribute('data-src');
 			}, delay);
 		}
+	}
+	
+	function getElByTex(req) {
+		let res;
+		if (!document.allElm) document.allElm = document.querySelectorAll('*');
+		document.allElm.forEach(e => {
+			if (res) return;
+			const text = e.innerText.trim().replace(/\s+/g, ' ');
+			if (typeof req === 'string' && text === req) res = e;
+			if (typeof req === 'object' && req.test(text)) res = e;
+		});
+		return res;
 	}
 }
 

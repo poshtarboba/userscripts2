@@ -3,16 +3,18 @@
 	if (noVideo) return;
 	let controls = document.querySelector('.ytp-left-controls');
 	if (!controls) return;
+	removeElements();
 	let style = document.createElement('style');
 	let styleHTML = '.pb-btn{position:relative;display:inline-block;padding:0 6px;vertical-align:top;cursor:pointer;opacity:.7}\n';
 	styleHTML += '.pb-btn:hover{opacity:1}\n';
 	styleHTML += '.pb-btn::before{content:"";position:absolute;left:2px;top:8px;right:2px;bottom:8px;border:1px solid #fff;border-radius:4px}\n';
 	styleHTML += '.pb-btn.pb-active:before{background:#fff8}\n';
-	styleHTML += '.ytp-left-controls{position:relative}\n';
+	styleHTML += '.ytp-chrome-controls{position:relative;z-index:5000}\n';
+	styleHTML += '.ytp-left-controls{position:relative;overflow:visible !important}\n';
 	//styleHTML += '.pb-play{position:absolute;left:0;top:-60px}\n';
 	styleHTML += '.pb-span-box{position:relative}\n';
-	styleHTML += '.pb-span-box:hover:before{content:"";position:absolute;left:0;bottom:100%;width:246px;height:50px;background:rgba(0,0,0,0.2)}\n';
-	styleHTML += '.pb-speed{position:absolute;display:none;top:-60px}\n';
+	styleHTML += '.pb-span-box:hover:before{content:"";position:absolute;left:-4px;bottom:100%;width:254px;height:50px;background:rgba(0,0,0,0.4);border-radius:4px}\n';
+	styleHTML += '.pb-speed{position:absolute;display:none;top:-50px}\n';
 	styleHTML += '.pb-span-box:hover .pb-speed{display:block}\n';
 	styleHTML += '.pb-speed-100x{left:0}\n';
 	styleHTML += '.pb-speed-125x{left:25px}\n';
@@ -34,8 +36,8 @@
 	let btn050x = createButton('0.5x', 'pb-speed pb-speed-050x');
 	let btn025x = createButton('0.25x', 'pb-speed pb-speed-025x');
 	let btnPlay = createButton('▶', 'pb-play');
-	spanBox.appendChild(btnPlay);
 	spanBox.appendChild(btn480p);
+	spanBox.appendChild(btnPlay);
 	spanBox.appendChild(btn100x);
 	spanBox.appendChild(btn125x);
 	spanBox.appendChild(btn150x);
@@ -51,6 +53,9 @@
 	addClick(btn150x, 'Швидкість відтворення', '1.5');
 	addClick(btn125x, 'Швидкість відтворення', '1.25');
 	addClick(btn100x, 'Швидкість відтворення', 'Звичайна');
+	addClick(btn075x, 'Швидкість відтворення', '0.75');
+	addClick(btn050x, 'Швидкість відтворення', '0.5');
+	addClick(btn025x, 'Швидкість відтворення', '0.25');
 	btnPlay.addEventListener('click', () => {
 		btnPlay.remove();
 		delayClick(100, btn125x);
@@ -83,7 +88,24 @@
 			if (!foundLi) btnGear.click();
 		});
 	}
-	function delayClick(time, elem){
+	function delayClick(time, elem) {
 		setTimeout(() => { elem.dispatchEvent(new Event('click')); }, time);
+	}
+	function removeElements() {
+		rm(document.querySelector('.ytp-left-controls .ytp-next-button'), 'btnNext');
+		rm(document.querySelector('.ytp-right-controls .ytp-miniplayer-button'), 'btnMiniPlayer');
+		rm(document.querySelector('.ytp-chapter-container'), 'chapters');
+		rm(document.getElementById('sponsor-button'), 'btnSponsor');
+		rm(document.getElementByText('Не подобається'), 'btnDislike');
+		rm(document.getElementByText('Поділитися'), 'btnShare');
+		rm(document.getElementByText('Зберегти'), 'btnSave');
+		rm(document.getElementByText('Створити кліп'), 'btnClip');
+		let btnChat = document.getElementByText('Створити запис чату');
+		if (btnChat) btnChat.parentElement.click(); else console.log('> Chat not found');
+		
+		function rm(elem, text) {
+			if (elem) elem.remove();
+			else if (text) console.log('> ' + text + 'not found');
+		}
 	}
 })();
