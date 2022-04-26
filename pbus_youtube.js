@@ -106,7 +106,7 @@
 			rmText(document.getElementByText('Зберегти'), 'btnSave');
 			rmText(document.getElementByText('Створити кліп'), 'btnClip');
 			document.getElementByText('Сховати запис чату').forEach(e => e.parentElement.click());
-			const rx = /пряма\sтрансляція\sвідбулася/i;
+			const rx = /^пряма\sтрансляція\sвідбулася/i;
 			document.getElementByText(rx).forEach(e => e.innerHTML = e.innerHTML.replace(rx, 'Стрім:'));
 			if (++n > 9) clearInterval(intervalID);
 		}
