@@ -92,6 +92,7 @@
 		setTimeout(() => { elem.dispatchEvent(new Event('click')); }, time);
 	}
 	function removeElements() {
+		console.log('> Remove Elements');
 		rm(document.querySelector('.ytp-left-controls .ytp-next-button'), 'btnNext');
 		rm(document.querySelector('.ytp-right-controls .ytp-miniplayer-button'), 'btnMiniPlayer');
 		rm(document.querySelector('.ytp-chapter-container'), 'chapters');
