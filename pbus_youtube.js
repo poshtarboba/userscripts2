@@ -100,7 +100,7 @@
 		const intervalID = setInterval(winLoadDn, 3000);
 		function winLoadDn() {
 			console.log('>> Remove Elements 2 / ' + (n + 1));
-			rm([document.getElementById('sponsor-button')], 'btnSponsor');
+			rm(document.querySelectorAll('#sponsor-button'), 'btnSponsor');
 			rmText(document.getElementByText('Не подобається'), 'btnDislike');
 			rmText(document.getElementByText('Поділитися'), 'btnShare');
 			rmText(document.getElementByText('Зберегти'), 'btnSave');
