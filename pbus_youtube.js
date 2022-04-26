@@ -98,6 +98,7 @@
 		rm(document.querySelectorAll('.ytp-chapter-container'), 'chapters');
 		let n = 0;
 		const intervalID = setInterval(winLoadDn, 3000);
+		window.addEventListener('focus', winLoadDn);
 		function winLoadDn() {
 			console.log('>> Remove Elements 2 / ' + (n + 1));
 			rm(document.querySelectorAll('#sponsor-button'), 'btnSponsor');
@@ -108,7 +109,7 @@
 			document.getElementByText('Сховати запис чату').forEach(e => e.parentElement.click());
 			const rx = /^пряма\sтрансляція\sвідбулася/i;
 			document.getElementByText(rx).forEach(e => e.innerHTML = e.innerHTML.replace(rx, 'Стрім:'));
-			if (++n > 9) clearInterval(intervalID);
+			if (++n > 4) clearInterval(intervalID);
 		}
 		
 		function rm(elem, text) {
