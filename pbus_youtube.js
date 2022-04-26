@@ -107,7 +107,6 @@
 			rmText(document.getElementByText('Створити кліп'), 'btnClip');
 			let btnChat = document.getElementByText('Сховати запис чату');
 			if (btnChat.length) btnChat.forEach(e => e.parentElement.click());
-			else console.log('> Chat not found');
 			if (++n > 9) clearInterval(intervalID);
 		}
 		
