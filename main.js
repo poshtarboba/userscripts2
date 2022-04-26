@@ -264,7 +264,7 @@ function pbuscript_main_function(){
 		document.allElm.forEach(e => {
 			if (res) return;
 			let text = e.innerText;
-			if (!text) return; else text = text.trim().replace(/\s+/g, ' ');
+			if (!text) return; else text = text.trim().toLowerCase().replace(/\s+/g, ' ');
 			if (typeof req === 'string' && text === req) res = e;
 			if (typeof req === 'object' && req.test(text)) res = e;
 		});
