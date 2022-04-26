@@ -93,20 +93,21 @@
 	}
 	function removeElements() {
 		console.log('>> Remove Elements');
-		rm(document.querySelector('.ytp-left-controls .ytp-next-button'), 'btnNext');
-		rm(document.querySelector('.ytp-right-controls .ytp-miniplayer-button'), 'btnMiniPlayer');
-		rm(document.querySelector('.ytp-chapter-container'), 'chapters');
+		rm(document.querySelectorAll('.ytp-left-controls .ytp-next-button'), 'btnNext');
+		rm(document.querySelectorAll('.ytp-right-controls .ytp-miniplayer-button'), 'btnMiniPlayer');
+		rm(document.querySelectorAll('.ytp-chapter-container'), 'chapters');
 		let n = 0;
 		const intervalID = setInterval(winLoadDn, 3000);
 		function winLoadDn() {
 			console.log('>> Remove Elements 2 / ' + (n + 1));
-			rm(document.getElementById('sponsor-button'), 'btnSponsor');
+			rm([document.getElementById('sponsor-button')], 'btnSponsor');
 			rmText(document.getElementByText('Не подобається'), 'btnDislike');
 			rmText(document.getElementByText('Поділитися'), 'btnShare');
 			rmText(document.getElementByText('Зберегти'), 'btnSave');
 			rmText(document.getElementByText('Створити кліп'), 'btnClip');
 			let btnChat = document.getElementByText('Сховати запис чату');
-			if (btnChat) btnChat.parentElement.click(); else console.log('> Chat not found');
+			if (btnChat.length) btnChat.forEach(e => e.parentElement.click());
+			else console.log('> Chat not found');
 			if (++n > 9) clearInterval(intervalID);
 		}
 		
