@@ -96,21 +96,23 @@
 		rm(document.querySelector('.ytp-left-controls .ytp-next-button'), 'btnNext');
 		rm(document.querySelector('.ytp-right-controls .ytp-miniplayer-button'), 'btnMiniPlayer');
 		rm(document.querySelector('.ytp-chapter-container'), 'chapters');
-		window.addEventListener('load', winLoadDn);
+		let n = 0;
+		const intervalID = setInterval(winLoadDn, 3000);
 		function winLoadDn() {
-			console.log('>> Remove Elements 2');
+			console.log('>> Remove Elements 2 / ' + (n + 1));
 			rm(document.getElementById('sponsor-button'), 'btnSponsor');
 			rm(document.getElementByText('Не подобається'), 'btnDislike');
 			rm(document.getElementByText('Поділитися'), 'btnShare');
 			rm(document.getElementByText('Зберегти'), 'btnSave');
 			rm(document.getElementByText('Створити кліп'), 'btnClip');
-			let btnChat = document.getElementByText('Створити запис чату');
+			let btnChat = document.getElementByText('Сховати запис чату');
 			if (btnChat) btnChat.parentElement.click(); else console.log('> Chat not found');
+			if (++n > 9) clearInterval(intervalID);
 		}
 		
 		function rm(elem, text) {
-			if (elem) elem.remove();
-			else if (text) console.log('> ' + text + ' not found');
+			if (elem) { elem.remove(); console.log('> ' + text + ' removed!!!'); }
+			else { if (text) console.log('> ' + text + ' not found'); }
 		}
 	}
 })();
