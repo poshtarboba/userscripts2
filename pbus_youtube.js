@@ -105,8 +105,9 @@
 			rmText(document.getElementByText('Поділитися'), 'btnShare');
 			rmText(document.getElementByText('Зберегти'), 'btnSave');
 			rmText(document.getElementByText('Створити кліп'), 'btnClip');
-			let btnChat = document.getElementByText('Сховати запис чату');
-			if (btnChat.length) btnChat.forEach(e => e.parentElement.click());
+			document.getElementByText('Сховати запис чату').forEach(e => e.parentElement.click());
+			const rx = /пряма\sтрансляція\sвідбулася/i;
+			document.getElementByText(rx).forEach(e => e.innerHTML = e.innerHTML.replace(rx, 'Стрім:'));
 			if (++n > 9) clearInterval(intervalID);
 		}
 		
