@@ -92,17 +92,21 @@
 		setTimeout(() => { elem.dispatchEvent(new Event('click')); }, time);
 	}
 	function removeElements() {
-		console.log('> Remove Elements');
+		console.log('>> Remove Elements');
 		rm(document.querySelector('.ytp-left-controls .ytp-next-button'), 'btnNext');
 		rm(document.querySelector('.ytp-right-controls .ytp-miniplayer-button'), 'btnMiniPlayer');
 		rm(document.querySelector('.ytp-chapter-container'), 'chapters');
-		rm(document.getElementById('sponsor-button'), 'btnSponsor');
-		rm(document.getElementByText('Не подобається'), 'btnDislike');
-		rm(document.getElementByText('Поділитися'), 'btnShare');
-		rm(document.getElementByText('Зберегти'), 'btnSave');
-		rm(document.getElementByText('Створити кліп'), 'btnClip');
-		let btnChat = document.getElementByText('Створити запис чату');
-		if (btnChat) btnChat.parentElement.click(); else console.log('> Chat not found');
+		window.addEventListener('load', winLoadDn);
+		function winLoadDn() {
+			console.log('>> Remove Elements 2');
+			rm(document.getElementById('sponsor-button'), 'btnSponsor');
+			rm(document.getElementByText('Не подобається'), 'btnDislike');
+			rm(document.getElementByText('Поділитися'), 'btnShare');
+			rm(document.getElementByText('Зберегти'), 'btnSave');
+			rm(document.getElementByText('Створити кліп'), 'btnClip');
+			let btnChat = document.getElementByText('Створити запис чату');
+			if (btnChat) btnChat.parentElement.click(); else console.log('> Chat not found');
+		}
 		
 		function rm(elem, text) {
 			if (elem) elem.remove();
