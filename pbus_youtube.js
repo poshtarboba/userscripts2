@@ -101,10 +101,10 @@
 		function winLoadDn() {
 			console.log('>> Remove Elements 2 / ' + (n + 1));
 			rm(document.getElementById('sponsor-button'), 'btnSponsor');
-			rm(document.getElementByText('Не подобається'), 'btnDislike');
-			rm(document.getElementByText('Поділитися'), 'btnShare');
-			rm(document.getElementByText('Зберегти'), 'btnSave');
-			rm(document.getElementByText('Створити кліп'), 'btnClip');
+			rmText(document.getElementByText('Не подобається'), 'btnDislike');
+			rmText(document.getElementByText('Поділитися'), 'btnShare');
+			rmText(document.getElementByText('Зберегти'), 'btnSave');
+			rmText(document.getElementByText('Створити кліп'), 'btnClip');
 			let btnChat = document.getElementByText('Сховати запис чату');
 			if (btnChat) btnChat.parentElement.click(); else console.log('> Chat not found');
 			if (++n > 9) clearInterval(intervalID);
@@ -112,7 +112,10 @@
 		
 		function rm(elem, text) {
 			if (elem) { elem.remove(); console.log('> ' + text + ' removed!!!'); }
-			else { if (text) console.log('> ' + text + ' not found'); }
+			//else { if (text) console.log('> ' + text + ' not found'); }
+		}
+		function rmText(elem, text) {
+			if (elem) { elem.innerHTML = ''; console.log('> ' + text + ' clear!!!'); }
 		}
 	}
 })();
