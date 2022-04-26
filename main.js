@@ -260,10 +260,11 @@ function pbuscript_main_function(){
 	
 	function getElByTex(req) {
 		let res;
-		if (!document.allElm) document.allElm = document.querySelectorAll('*');
+		if (!document.allElm) document.allElm = document.body.querySelectorAll('*');
 		document.allElm.forEach(e => {
 			if (res) return;
-			const text = e.innerText.trim().replace(/\s+/g, ' ');
+			let text = e.innerText;
+			if (!text) return; else text = text.trim().replace(/\s+/g, ' ');
 			if (typeof req === 'string' && text === req) res = e;
 			if (typeof req === 'object' && req.test(text)) res = e;
 		});
