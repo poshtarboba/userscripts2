@@ -9,7 +9,7 @@ pbuscript_main_function();
 
 function pbuscript_main_function(){
 	console.info('PBUS> main.js');
-	document.getElementByText = getElByTex;         /* (string or RegExp) */
+	document.getElementByText = getElByText;         /* (string or RegExp) */
 	pbuscript.addStyle = addStyle;                  /* (string css [, string className]) */
 	pbuscript.createMainpanel = createMainpanel;    /* () */
 	pbuscript.createLenta = createLenta;            /* (array urls [, int delay = 1000]), url: { url, src } */
@@ -258,15 +258,14 @@ function pbuscript_main_function(){
 		}
 	}
 	
-	function getElByTex(req) {
-		let res;
-		if (!document.allElm) document.allElm = document.body.querySelectorAll('*');
-		document.allElm.forEach(e => {
-			if (res) return;
-			let text = e.innerText;
-			if (!text) return; else text = text.trim().toLowerCase().replace(/\s+/g, ' ');
-			if (typeof req === 'string' && text === req) res = e;
-			if (typeof req === 'object' && req.test(text)) res = e;
+	function getElByText(req) {
+		const res = [];
+		document.body.querySelectorAll('*').forEach(e => {
+			let text = e.innerHTML.trim();
+			if (!text) return;
+			text = text.toLowerCase().replace(/\s+/g, ' ');
+			if (typeof req === 'string' && text === req.toLowerCase()) res.push(e);
+			if (typeof req === 'object' && req.test(text)) res.push(e);
 		});
 		return res;
 	}
