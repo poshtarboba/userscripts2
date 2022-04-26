@@ -106,7 +106,7 @@
 		
 		function rm(elem, text) {
 			if (elem) elem.remove();
-			else if (text) console.log('> ' + text + 'not found');
+			else if (text) console.log('> ' + text + ' not found');
 		}
 	}
 })();
