@@ -9,8 +9,8 @@ pbuscript_main_function();
 
 function pbuscript_main_function(){
 	console.info('PBUS> main.js');
-	document.getElementsByText = getElByText;        /* (string or RegExp) */
 	document.getAllTags = getAllTags;               /* () */
+	document.getElementsByText = getElByText;       /* (string or RegExp) */
 	pbuscript.addStyle = addStyle;                  /* (string css [, string className]) */
 	pbuscript.createMainpanel = createMainpanel;    /* () */
 	pbuscript.createLenta = createLenta;            /* (array urls [, int delay = 1000]), url: { url, src } */
@@ -265,7 +265,7 @@ function pbuscript_main_function(){
 	
 	function getElByText(req) {
 		const res = [];
-		if (!document.allTags) document.allTags = getAllTags();
+		if (!document.allTags) document.allTags = document.getAllTags();
 		document.allTags.forEach(e => {
 			if (!e.innerHTML) return;
 			let text = e.innerHTML.trim();
