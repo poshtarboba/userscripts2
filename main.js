@@ -9,7 +9,8 @@ pbuscript_main_function();
 
 function pbuscript_main_function(){
 	console.info('PBUS> main.js');
-	document.getElementByText = getElByText;         /* (string or RegExp) */
+	document.getElementsByText = getElByText;        /* (string or RegExp) */
+	document.getAllTags = getAllTags;               /* () */
 	pbuscript.addStyle = addStyle;                  /* (string css [, string className]) */
 	pbuscript.createMainpanel = createMainpanel;    /* () */
 	pbuscript.createLenta = createLenta;            /* (array urls [, int delay = 1000]), url: { url, src } */
@@ -258,9 +259,15 @@ function pbuscript_main_function(){
 		}
 	}
 	
+	function getAllTags() {
+		document.allTags = document.querySelectorAll('*');
+	}
+	
 	function getElByText(req) {
 		const res = [];
-		document.body.querySelectorAll('*').forEach(e => {
+		if (!document.allTags) document.allTags = getAllTags();
+		document.allTags.forEach(e => {
+			if (!e.innerHTML) return;
 			let text = e.innerHTML.trim();
 			if (!text) return;
 			text = text.toLowerCase().replace(/\s+/g, ' ');
