@@ -93,30 +93,31 @@
 	}
 	function removeElements() {
 		console.log('>> Remove Elements');
-		rm(document.querySelectorAll('.ytp-left-controls .ytp-next-button'), 'btnNext');
-		rm(document.querySelectorAll('.ytp-right-controls .ytp-miniplayer-button'), 'btnMiniPlayer');
-		rm(document.querySelectorAll('.ytp-chapter-container'), 'chapters');
+		const tools = document.querySelector('.ytp-left-controls').parentElement;
+		rm(tools.querySelectorAll('.ytp-next-button'), 'btnNext');
+		rm(tools.querySelectorAll('.ytp-miniplayer-button'), 'btnMiniPlayer');
+		rm(tools.querySelectorAll('.ytp-chapter-container'), 'chapters');
 		let n = 0;
 		const intervalID = setInterval(winLoadDn, 3000);
 		window.addEventListener('focus', winLoadDn);
 		function winLoadDn() {
 			console.log('>> Remove Elements 2 / ' + (n + 1));
 			rm(document.querySelectorAll('#sponsor-button'), 'btnSponsor');
-			rmText(document.getElementByText('Не подобається'), 'btnDislike');
-			rmText(document.getElementByText('Поділитися'), 'btnShare');
-			rmText(document.getElementByText('Зберегти'), 'btnSave');
-			rmText(document.getElementByText('Створити кліп'), 'btnClip');
-			document.getElementByText('Сховати запис чату').forEach(e => e.parentElement.click());
+			rmText(document.getElementsByText('Не подобається'), 'btnDislike');
+			rmText(document.getElementsByText('Поділитися'), 'btnShare');
+			rmText(document.getElementsByText('Зберегти'), 'btnSave');
+			rmText(document.getElementsByText('Створити кліп'), 'btnClip');
+			document.getElementsByText('Сховати запис чату').forEach(e => e.parentElement.click());
 			const rx = /^пряма\sтрансляція\sвідбулася/i;
-			document.getElementByText(rx).forEach(e => e.innerHTML = e.innerHTML.replace(rx, 'Стрім:'));
+			document.getElementsByText(rx).forEach(e => e.innerHTML = e.innerHTML.replace(rx, 'Стрім:'));
 			if (++n > 4) clearInterval(intervalID);
 		}
 		
-		function rm(elem, text) {
-			elem.forEach(e => { e.remove(); console.log('> ' + text + ' removed!!!'); });
+		function rm(elems, text) {
+			elems.forEach(e => { e.remove(); console.log('> ' + text + ' removed!!!'); });
 		}
-		function rmText(elem, text) {
-			elem.forEach(e => { e.innerHTML = ''; console.log('> ' + text + ' cleared!!!'); });
+		function rmText(elems, text) {
+			elems.forEach(e => { e.innerHTML = ''; console.log('> ' + text + ' cleared!!!'); });
 		}
 	}
 })();
