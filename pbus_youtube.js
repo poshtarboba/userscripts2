@@ -101,6 +101,7 @@
 		const intervalID = setInterval(winLoadDn, 3000);
 		window.addEventListener('focus', winLoadDn);
 		function winLoadDn() {
+			document.getAllTags();
 			console.log('>> Remove Elements 2 / ' + (n + 1));
 			rm(document.querySelectorAll('#sponsor-button'), 'btnSponsor');
 			rmText(document.getElementsByText('Не подобається'), 'btnDislike');
