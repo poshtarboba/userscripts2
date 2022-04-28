@@ -23,8 +23,8 @@
 	styleHTML += '.pb-speed-075x{left:127px}\n';
 	styleHTML += '.pb-speed-050x{left:169px}\n';
 	styleHTML += '.pb-speed-025x{left:204px}\n';
-	styleHTML += '#sponsor-button,.ytp-next-button,.ytp-miniplayer-button,.ytp-chapter-container{display:none}\n';
-	styleHTML += '#top-level-buttons-computed > ytd-toggle-button-renderer:not(:first-child) yt-formatted-string{font-size:0 !important}\n';
+	styleHTML += '#sponsor-button,.ytp-next-button,.ytp-miniplayer-button,.ytp-chapter-container{display:none !important}\n';
+	styleHTML += '#top-level-buttons-computed > *:not(:first-child) yt-formatted-string{font-size:0 !important}\n';
 	style.innerHTML = styleHTML;
 	document.head.appendChild(style);
 	let spanBox = document.createElement('span');
