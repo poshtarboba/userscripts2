@@ -23,6 +23,8 @@
 	styleHTML += '.pb-speed-075x{left:127px}\n';
 	styleHTML += '.pb-speed-050x{left:169px}\n';
 	styleHTML += '.pb-speed-025x{left:204px}\n';
+	styleHTML += '#sponsor-button,.ytp-next-button,.ytp-miniplayer-button,.ytp-chapter-container{display:none}\n';
+	styleHTML += '#top-level-buttons-computed > ytd-toggle-button-renderer:not(:first-child) yt-formatted-string{font-size:0 !important}\n';
 	style.innerHTML = styleHTML;
 	document.head.appendChild(style);
 	let spanBox = document.createElement('span');
@@ -92,33 +94,31 @@
 		setTimeout(() => { elem.dispatchEvent(new Event('click')); }, time);
 	}
 	function removeElements() {
-		console.log('>> Remove Elements');
-		const tools = document.querySelector('.ytp-left-controls').parentElement;
-		rm(tools.querySelectorAll('.ytp-next-button'), 'btnNext');
-		rm(tools.querySelectorAll('.ytp-miniplayer-button'), 'btnMiniPlayer');
-		rm(tools.querySelectorAll('.ytp-chapter-container'), 'chapters');
+		//const tools = document.querySelector('.ytp-left-controls').parentElement;
+		//rm(tools.querySelectorAll('.ytp-next-button'), 'btnNext');
+		//rm(tools.querySelectorAll('.ytp-miniplayer-button'), 'btnMiniPlayer');
+		//rm(tools.querySelectorAll('.ytp-chapter-container'), 'chapters');
 		let n = 0;
 		const intervalID = setInterval(winLoadDn, 3000);
 		window.addEventListener('focus', winLoadDn);
 		function winLoadDn() {
 			document.getAllTags();
-			console.log('>> Remove Elements 2 / ' + (n + 1));
-			rm(document.querySelectorAll('#sponsor-button'), 'btnSponsor');
-			rmText(document.getElementsByText('Не подобається'), 'btnDislike');
-			rmText(document.getElementsByText('Поділитися'), 'btnShare');
-			rmText(document.getElementsByText('Зберегти'), 'btnSave');
-			rmText(document.getElementsByText('Створити кліп'), 'btnClip');
+			//rm(document.querySelectorAll('#sponsor-button'), 'btnSponsor');
+			//rmText(document.getElementsByText('Не подобається'), 'btnDislike');
+			//rmText(document.getElementsByText('Поділитися'), 'btnShare');
+			//rmText(document.getElementsByText('Зберегти'), 'btnSave');
+			//rmText(document.getElementsByText('Створити кліп'), 'btnClip');
 			document.getElementsByText('Сховати запис чату').forEach(e => e.parentElement.click());
 			const rx = /^пряма\sтрансляція\sвідбулася/i;
 			document.getElementsByText(rx).forEach(e => e.innerHTML = e.innerHTML.replace(rx, 'Стрім:'));
 			if (++n > 4) clearInterval(intervalID);
 		}
 		
-		function rm(elems, text) {
+		/*function rm(elems, text) {
 			elems.forEach(e => { e.remove(); console.log('> ' + text + ' removed!!!'); });
 		}
 		function rmText(elems, text) {
 			elems.forEach(e => { e.innerHTML = ''; console.log('> ' + text + ' cleared!!!'); });
-		}
+		}*/
 	}
 })();
