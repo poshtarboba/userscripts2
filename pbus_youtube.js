@@ -11,7 +11,6 @@
 	styleHTML += '.pb-btn.pb-active:before{background:#fff8}\n';
 	styleHTML += '.ytp-chrome-controls{position:relative;z-index:5000}\n';
 	styleHTML += '.ytp-left-controls{position:relative;overflow:visible !important}\n';
-	//styleHTML += '.pb-play{position:absolute;left:0;top:-60px}\n';
 	styleHTML += '.pb-span-box{position:relative}\n';
 	styleHTML += '.pb-span-box:hover:before{content:"";position:absolute;left:-4px;bottom:100%;width:254px;height:50px;background:rgba(0,0,0,0.4);border-radius:4px}\n';
 	styleHTML += '.pb-speed{position:absolute;display:none;top:-50px}\n';
@@ -92,33 +91,5 @@
 	}
 	function delayClick(time, elem) {
 		setTimeout(() => { elem.dispatchEvent(new Event('click')); }, time);
-	}
-	function removeElements() {
-		//const tools = document.querySelector('.ytp-left-controls').parentElement;
-		//rm(tools.querySelectorAll('.ytp-next-button'), 'btnNext');
-		//rm(tools.querySelectorAll('.ytp-miniplayer-button'), 'btnMiniPlayer');
-		//rm(tools.querySelectorAll('.ytp-chapter-container'), 'chapters');
-		let n = 0;
-		const intervalID = setInterval(winLoadDn, 3000);
-		window.addEventListener('focus', winLoadDn);
-		function winLoadDn() {
-			document.getAllTags();
-			//rm(document.querySelectorAll('#sponsor-button'), 'btnSponsor');
-			//rmText(document.getElementsByText('Не подобається'), 'btnDislike');
-			//rmText(document.getElementsByText('Поділитися'), 'btnShare');
-			//rmText(document.getElementsByText('Зберегти'), 'btnSave');
-			//rmText(document.getElementsByText('Створити кліп'), 'btnClip');
-			document.getElementsByText('Сховати запис чату').forEach(e => e.parentElement.click());
-			const rx = /^пряма\sтрансляція\sвідбулася/i;
-			document.getElementsByText(rx).forEach(e => e.innerHTML = e.innerHTML.replace(rx, 'Стрім:'));
-			if (++n > 4) clearInterval(intervalID);
-		}
-		
-		/*function rm(elems, text) {
-			elems.forEach(e => { e.remove(); console.log('> ' + text + ' removed!!!'); });
-		}
-		function rmText(elems, text) {
-			elems.forEach(e => { e.innerHTML = ''; console.log('> ' + text + ' cleared!!!'); });
-		}*/
 	}
 })();
