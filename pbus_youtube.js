@@ -3,7 +3,6 @@
 	if (noVideo) return;
 	let controls = document.querySelector('.ytp-left-controls');
 	if (!controls) return;
-	removeElements();
 	let style = document.createElement('style');
 	let styleHTML = '.pb-btn{position:relative;display:inline-block;padding:0 6px;vertical-align:top;cursor:pointer;opacity:.7}\n';
 	styleHTML += '.pb-btn:hover{opacity:1}\n';
